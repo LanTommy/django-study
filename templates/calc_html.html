@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网页计算器</title>
+</head>
+<body>
+<form method="post" action="/calc_html">
+    <input name="x" value="{{ x }}" placeholder="请输入第一个数字">
+    <select name="op">
+        <option value="add" {% if op == 'add' %}selected{% endif %}>＋</option>
+        <option value="sub" {% if op == 'sub' %}selected{% endif %}>－</option>
+        <option value="mul" {% if op == 'mul' %}selected{% endif %}>×</option>
+        <option value="div" {% if op == 'div' %}selected{% endif %}>÷</option>
+    </select>
+    <input type="text" name="y" value="{{ y }}" placeholder="请输入第二个数字" > = <span>{{ res }}</span>
+    <div>
+        <button type="submit">开始计算</button>
+    </div>
+    {% if res == 0 %}
+    <script type="text/javascript">alert("只能输入数字");</script>
+    {% elif res == -1 %}
+    <script type="text/javascript">alert("前后不能有空格");</script>
+    {% elif res == -2 %}
+    <script type="text/javascript">alert("前后不能为空");</script>
+    {% endif %}
+
+</form>
+</body>
+</html>

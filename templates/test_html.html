@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试变量</title>
+</head>
+<body>
+<h1>这是我的模板哦！！！！！</h1>
+<h1>我的用户名是：{{ username | lower }}</h1>
+<h1>我的密码是：{{ password | add:'1'}}</h1>
+<h1>script是：{{ scrit | safe}}</h1>
+{% if x > 10 %}
+今天天气很好
+{% else %}
+今天天气一般般啦
+{% endif %}
+<br>
+{% for name in list %}
+    <h1>{% if forloop.first %} 这是第一个 {% endif %}</h1>
+    <h1>{% if forloop.last %} 这是第最后一个 {% endif %}</h1>
+    <p> {{ forloop.counter }} {{ name }}</p>
+{% empty %}
+    当前无数据
+{% endfor %}
+</body>
+</html>
