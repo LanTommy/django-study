@@ -1,0 +1,19 @@
+{% extends './bookstore.html' %}
+
+{% block data %}
+      <tr>
+        <td>{{ this_book.id }}</td>
+        <td><input type="text" value="{{ this_book.title }}" disabled="disabled"></td>
+        <td><input type="text" value="{{ this_book.pub }}" disabled="disabled"></td>
+        <form method="post" action="/bookstore/update_book/{{ this_book.id }}">
+          <td><input type="text" name="price" value="{{ this_book.price }}"></td>
+          <td><input type="text" name="market_price" value="{{ this_book.market_price }}"></td>
+          <td>
+<!--            <a href="all_book?b_id={{ book.id }}" type="submit">确认</a>-->
+            <button type="submit">确认修改</button>
+            <a href="/bookstore/all_book">返回</a>
+          </td>
+        </form>
+
+      </tr>
+{% endblock %}

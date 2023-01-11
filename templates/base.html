@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block mytitle %}
+    <title>爬虫娱乐平台</title>
+    {% endblock %}
+</head>
+<body>
+{{ lis }}
+<a href="{% url 'mp3' '1' %}">音乐频道</a>
+<a href="/movie">电影频道（反向解析到首页）</a>
+<br>
+
+{% block info %}
+    这是主页
+{% endblock %}
+<br>
+<a href="{% url 'bs' %}">返回首页（反向解析）</a>
+<h3>有任何问题请联系：xxx</h3>
+</body>
+</html>
