@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bookstore',
-    'oto'
+    'oto',
+    'otm',
+    'mtm'
 ]
 
 MIDDLEWARE = [
