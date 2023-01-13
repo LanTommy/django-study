@@ -17,3 +17,13 @@ def del_cookies(request):
     resp = HttpResponse('del is ok')
     resp.delete_cookie('uname')
     return resp
+
+
+def set_session(request):
+    request.session['uname'] = 'lxy'
+    return HttpResponse('set session is ok')
+
+
+def get_session(request):
+    value = request.session['uname']
+    return HttpResponse(f'session value is {value}')
